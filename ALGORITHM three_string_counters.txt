@@ -1,0 +1,29 @@
+ALGORITHM three_string_counters
+VAR
+c CHAR := ''; ;
+x : INTEGER := 0;
+y : INTEGER := 0;
+z : INTEGER := 0;
+count x:= 0; y := 0; z := 0;
+//x compteur de la longeur de la phrase
+//y compteur des voyelles
+//z compteur des mots
+BEGIN
+Read (c) ;
+WHILE (c != '.') DO
+  SWITCH (c) DO
+   default: x:=x+1;
+    case 'a':
+    case 'e' :
+    case 'o':
+    case 'u' : 
+    case 'y' : 
+    case 'i' : y:=y+1;
+    case ' ': z:=z+1
+  END_SWITCH
+END_WHILE
+   z:=z+1;  // pr prendre en consideration le dernier mot 
+    Write("The length of the sentence is:",x);
+    Write("The number of vowels in the sentence is: ",y);
+    Write("The number of words in the sentence is: ",z);
+END
