@@ -1,0 +1,49 @@
+ALGORITHM  sumOverlappingElements 
+
+  VAR 
+       i , element, count : INTEGER;
+       sum  : INTEGER :=0;
+       htab : HASH_TABLE<INTEGER,INTEGER>;
+       keySet : ARRAY_OF INTEGER[20];// array of keys 
+
+
+    BEGIN
+      Read(set1);
+      Read(set2);
+
+        FOR i FROM 0 TO set1.length-1 STEP 1 DO
+             element := set1[i];
+            IF (htab.lookup(element)) 
+                count := htab.get(element);
+                htab.insert(element, count+1);
+            ELSE
+                htab.insert(element, 1);
+            END_IF
+        END_FOR
+
+
+        FOR i FROM 0 TO set2.length-1 STEP 1 DO
+            element := set2[i];
+            IF (htab.lookup(element)) 
+                count := htab.get(element);
+                htab.insert(element, count+1);
+            ELSE
+                htab.insert(element, 1);
+            END_IF
+        END_FOR
+ 
+  //keySet() : retourne l'ensemble de toutes les clés de cette table de hachage.
+  // Cet ensemble ne peut pas contenir de doublons, il s'agit d'un Set key,
+        
+  // Now we loop the hash table to calculate the sum of overlapping elements
+keySet := htab.keySet(); // array of keys 
+   FOR i FROM 0 TO keySet.length -1 STEP 1  DO
+       count = htab.get(key);
+       IF (count=2 )THEN
+           sum +=  keySet[i] * count;
+       END_IF
+    END_FOR
+
+   Write("Overlapping Elements Sum : " + sum);
+
+ END
