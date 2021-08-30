@@ -21,7 +21,6 @@ ALGORITHM distinctElementsInTwoSets
                 sum := sum + set2[i] ;
                
             END_IF
-            END_IF
         END_FOR
 
    Write("Distinct Elements Sum : " + sum);
