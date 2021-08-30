@@ -20,10 +20,9 @@ ALGORITHM  sumOverlappingElements
 
 
         FOR i FROM 0 TO set2.length-1 STEP 1 DO
-             IF (set1.lookup(se2[i]) = TRUE
+             IF (set1.lookup(se2[i]) = TRUE)
                 sum := sum +set2[i] ;
                
-            END_IF
             END_IF
         END_FOR
  
